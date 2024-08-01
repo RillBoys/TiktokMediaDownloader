@@ -1,0 +1,239 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('asset/bg.png');
+    background-size: cover;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #ffffff;
+}
+
+.container {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 8px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.42);
+    max-width: 500px;
+    width: 100%;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.container::before {
+    content: "made rill";
+    position: absolute;
+    bottom: 1px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 10px;
+    font-family: 'Roboto', sans-serif;
+    color: rgba(151,151,151,0.606);
+    pointer-events: none;
+    user-select: none;
+    z-index: -1;
+}
+
+.loading {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 1.5em;
+    color: #ffffff;
+    z-index: 1000;
+}
+
+h1 {
+    margin: 0 0 20px;
+    font-size: 24px;
+    color: #ffffff;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+label {
+    width: 100%;
+    text-align: left;
+    color: #ffffff;
+    margin-bottom: 5px;
+}
+
+.input-group {
+    display: flex;
+    width: 100%;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 25px 0 0 25px;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 0 25px 25px 0;
+    cursor: pointer;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+#result {
+    margin-top: 20px;
+    display: none;
+}
+
+#userInfo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+#mediaContent {
+    position: relative;
+    overflow: hidden;
+    max-width: 100%;
+    border-radius: 8px;
+}
+
+#userAvatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+}
+
+#username {
+    font-size: 1.2em;
+    margin: 0;
+}
+
+#statistics, #description {
+    font-size: 0.9em;
+    color: lightgray;
+    margin: 10px 0;
+}
+
+/* Slider Styles */
+.media-slider {
+    position: relative;
+    max-width: 100%;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: #f8f8f8;
+}
+
+.slides-container {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slides-container img {
+    max-width: 100%;
+    border-radius: 8px;
+    pointer-events: none;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: auto;
+    padding: 10px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    user-select: none;
+    border: none;
+}
+
+.prev {
+    left: 10px;
+}
+
+.next {
+    right: 10px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.dots-container {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 5px;
+}
+
+.dot {
+    height: 8px;
+    width: 8px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.dot.active {
+    background-color: #717171;
+}
+
+.controls a {
+    display: inline-block;
+    margin: 5px;
+    padding: 10px 15px;
+    color: #fff;
+    background-color: #007bff;
+    border-radius: 5px;
+    text-decoration: none;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.controls a:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
+    }
+    
+    input[type="text"], button {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+}

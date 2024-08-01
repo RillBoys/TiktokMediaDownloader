@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Download TikTok Media</title>
+    <link rel="icon" type="image/png" sizes="512x512" href="asset/du.png">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Download TikTok Media</h1>
+        <div id="loading" class="loading">Loading...</div>
+        <form id="downloadForm">
+            <label for="tiktokUrl">TikTok URL:</label>
+            <div class="input-group">
+                <input
+                    type="text"
+                    id="tiktokUrl"
+                    name="tiktokUrl"
+                    placeholder="Tempel tautan tiktokmu di sini"
+                    required
+                />
+                <button type="submit">Download</button>
+            </div>
+        </form>
+        <div id="result">
+            <div id="userInfo">
+                <img id="userAvatar" src="" alt="User Avatar" />
+                <h2 id="username"></h2>
+            </div>
+            <div id="mediaContent" class="media-slider">
+                <div id="slidesContainer" class="slides-container"></div>
+                <div id="dotsContainer" class="dots-container"></div>
+                <button class="prev" onclick="changeSlide(-1)">
+                    &#10094;
+                </button>
+                <button class="next" onclick="changeSlide(1)">
+                    &#10095;
+                </button>
+            </div>
+            <p id="description"></p>
+            <p id="statistics"></p>
+            <div class="controls">
+                <a id="downloadLink1" href="#" download>
+                    Download this slide
+                </a>
+                <a id="downloadLink2" href="#" download>
+                    Download as video
+                </a>
+                <a id="downloadLink3" href="#" download>Download MP3</a>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
